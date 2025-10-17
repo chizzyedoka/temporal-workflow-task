@@ -105,9 +105,8 @@ Client (Terminal 2) prints a completion message and summary statistics and the d
 └── workflows.py        # Workflow definition that orchestrates activities
 ```
 
----
-
-If you'd like, I can also add a tiny troubleshooting section (worker registration checks, debugging tips) or add a quick PowerShell script to start both processes. Let me know which you'd prefer.
+### In your Worker Terminal (Terminal 1)
+You will see the retry in action. The logs clearly show Attempt 1 failing (which we planned) and Attempt 2 succeeding.
 
 ```
 INFO:root:Worker started; listening for tasks...
