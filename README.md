@@ -1,4 +1,3 @@
-```markdown
 # Temporal Python Workflow Demo: Fetch, Transform, and Retry
 
 [![Temporal](https://img.shields.io/badge/temporal.io-framework-blue)](https://temporal.io/)
