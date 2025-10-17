@@ -1,3 +1,5 @@
+# activities.py
+
 import requests
 from typing import List, Dict, Any
 from store import tasksDb
@@ -8,6 +10,17 @@ from temporalio import activity
 async def fetch_todos(
     url: str = "https://jsonplaceholder.typicode.com/todos",
 ) -> List[Dict[str, Any]]:
+
+    attempt = activity.info().attempt
+    activity.logger.info(f"Executing fetch_todos, attempt {attempt}")
+
+    if attempt == 1:
+        activity.logger.warning("Simulating API failure on attempt 1...")
+        # Raising an exception tells Temporal the activity failed
+        raise RuntimeError("Simulated API failure")
+    # --- End of simulation ---
+
+    activity.logger.info("Attempt 2 (or later) successful. Fetching data...")
     response = requests.get(url)
     response.raise_for_status()
     todos = response.json()
@@ -27,7 +40,6 @@ async def transform_todos(todos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     
     modified_count = 0
     for todo in todos:
-        # Check if userId is 2
         if todo.get("userId") == 2:
             todo["completed"] = True
             modified_count += 1
