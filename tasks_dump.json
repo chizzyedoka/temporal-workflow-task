@@ -120,7 +120,7 @@
     "userId": 1
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 21,
     "title": "suscipit repellat esse quibusdam voluptatem incidunt",
     "userId": 2
@@ -132,13 +132,13 @@
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 23,
     "title": "et itaque necessitatibus maxime molestiae qui quas velit",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 24,
     "title": "adipisci non ad dicta qui amet quaerat doloribus ea",
     "userId": 2
@@ -162,13 +162,13 @@
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 28,
     "title": "nesciunt totam sit blanditiis sit",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 29,
     "title": "laborum aut in quam",
     "userId": 2
@@ -180,25 +180,25 @@
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 31,
     "title": "repudiandae totam in est sint facere fuga",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 32,
     "title": "earum doloribus ea doloremque quis",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 33,
     "title": "sint sit aut vero",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 34,
     "title": "porro aut necessitatibus eaque distinctio",
     "userId": 2
@@ -216,19 +216,19 @@
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 37,
     "title": "sunt cum tempora",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 38,
     "title": "totam quia non",
     "userId": 2
   },
   {
-    "completed": false,
+    "completed": true,
     "id": 39,
     "title": "doloremque quibusdam asperiores libero corrupti illum qui omnis",
     "userId": 2

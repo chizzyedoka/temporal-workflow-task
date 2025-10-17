@@ -3,7 +3,7 @@ from temporalio.client import Client
 from temporalio.worker import Worker
 
 from workflows import TodoWorkflow
-from activities import fetch_todos
+from activities import fetch_todos, transform_todos
 
 
 async def main():
@@ -13,7 +13,7 @@ async def main():
         client,
         task_queue="todo-task-queue",
         workflows=[TodoWorkflow],
-        activities=[fetch_todos],
+        activities=[fetch_todos, transform_todos],  # Added transform_todos
     ):
         print("Worker started; listening for tasks...")
         await asyncio.Event().wait()

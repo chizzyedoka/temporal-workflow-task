@@ -22,11 +22,17 @@ async def fetch_todos(
 
 @activity.defn
 async def transform_todos(todos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Normalize todos and ensure todo with id==2 is marked completed."""
+    """Mark all todos with userId == 2 as completed."""
+    activity.logger.info(f"Transforming {len(todos)} todos")
+    
+    modified_count = 0
     for todo in todos:
-        # Use get to avoid KeyError on malformed items
-        if todo.get("id") == 2:
+        # Check if userId is 2
+        if todo.get("userId") == 2:
             todo["completed"] = True
+            modified_count += 1
+    
+    activity.logger.info(f"Modified {modified_count} todos for userId 2")
     return todos
 
 
