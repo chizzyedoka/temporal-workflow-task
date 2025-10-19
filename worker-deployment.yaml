@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temporal-worker-deployment
+  namespace: default
+  labels:
+    app: temporal-worker
+spec:
+  # run 2 replicas of the worker for high availability
+  replicas: 2
+  selector:
+    matchLabels:
+      app: temporal-worker
+  template:
+    metadata:
+      labels:
+        # This label is used to identify the worker pods
+        app: temporal-worker
+    spec:
+      containers:
+      - name: worker
+        image: chisomedoka48/temporal-worker:latest
+        env:
+        - name: TEMPORAL_SERVER_ADDRESS
+          value: "temporal-server.default.svc.cluster.local:7233"
+        ports:
+        - name: metrics
+          containerPort: 9090
